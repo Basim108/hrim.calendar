@@ -1,0 +1,78 @@
+<template>
+  <div class="tool-bar">
+    <v-btn
+      class="sm-2"
+      fab
+      gray
+      x-small
+      @click="prevBtnClicked"
+    >
+      <v-icon>
+        mdi-arrow-left
+      </v-icon>
+    </v-btn>
+    <v-btn
+      class="sm-2"
+      fab
+      gray
+      x-small
+      @click="nextBtnClicked"
+    >
+      <v-icon>
+        mdi-arrow-right
+      </v-icon>
+    </v-btn>
+
+    <div class="title">
+      {{ title }}
+    </div>
+  </div>
+</template>
+
+<script>
+import moment from 'moment'
+import { showPreviousMonth, showNextMonth } from '@/store/action-types'
+
+export default {
+  name: 'MonthToolBar',
+  computed: {
+    title () {
+      const pageDate = moment(this.$store.state.pageDateTs)
+      const currentMonth = pageDate.month()
+      return moment.months().filter((name, index) => index === currentMonth)[0] + ' ' + pageDate.year()
+    }
+  },
+  methods: {
+    prevBtnClicked () {
+      this.$store.dispatch(showPreviousMonth)
+    },
+    nextBtnClicked () {
+      this.$store.dispatch(showNextMonth)
+    }
+  }
+}
+</script>
+
+<style scoped>
+.title {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+  font-size: 22px;
+}
+
+.tool-bar {
+  margin: 10px;
+}
+
+@media only screen and  (max-width: 768px) {
+  .title {
+    margin-left: 5px;
+    font-size: 18px;
+  }
+
+  .tool-bar {
+    margin-bottom: 5px;
+  }
+}
+</style>
