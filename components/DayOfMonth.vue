@@ -4,7 +4,7 @@
       <div v-if="ts === 0" class="weekday-name" :class="getHolidayClass()">
         {{ weekday }}
       </div>
-      <div v-else :class="getHolidayClass()">
+      <div v-else class="date-body" :class="getHolidayClass()">
         <span class="date">
           {{ currentDate.date() }}
         </span>
@@ -95,7 +95,7 @@ export default {
 
 .title {
   height: 20px !important;
-  padding:  0px;
+  padding: 0px;
 }
 
 @media only screen and (max-width: 768px) {

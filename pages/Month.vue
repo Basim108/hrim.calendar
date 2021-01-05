@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <MonthToolBar/>
+    <MonthSetter />
     <DayOfMonth
       v-for="name in weekdaysShortnames"
       :key="name"
@@ -18,12 +18,13 @@
 
 <script>
 import DayOfMonth from '@/components/DayOfMonth'
+import MonthSetter from '@/components/MonthSetter'
 import moment from 'moment'
 
 export default {
   name: 'Month',
   layout: 'month',
-  components: { DayOfMonth },
+  components: { DayOfMonth, MonthSetter },
   computed: {
     weekdaysShortnames () {
       return moment.weekdaysShort()

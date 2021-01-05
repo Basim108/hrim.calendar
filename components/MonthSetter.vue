@@ -1,7 +1,7 @@
 <template>
   <div class="tool-bar">
     <v-btn
-      class="sm-2"
+      class="sm-2 prev-month-btn"
       fab
       gray
       x-small
@@ -12,7 +12,7 @@
       </v-icon>
     </v-btn>
     <v-btn
-      class="sm-2"
+      class="sm-2 next-month-btn"
       fab
       gray
       x-small
@@ -34,7 +34,7 @@ import moment from 'moment'
 import { showPreviousMonth, showNextMonth } from '@/store/action-types'
 
 export default {
-  name: 'MonthToolBar',
+  name: 'MonthSetter',
   computed: {
     title () {
       const pageDate = moment(this.$store.state.pageDateTs)
