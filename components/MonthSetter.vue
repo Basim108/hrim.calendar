@@ -1,27 +1,11 @@
 <template>
   <div class="tool-bar">
-    <v-btn
-      class="sm-2 prev-month-btn"
-      fab
-      gray
-      x-small
-      @click="prevBtnClicked"
-    >
-      <v-icon>
-        mdi-arrow-left
-      </v-icon>
-    </v-btn>
-    <v-btn
-      class="sm-2 next-month-btn"
-      fab
-      gray
-      x-small
-      @click="nextBtnClicked"
-    >
-      <v-icon>
-        mdi-arrow-right
-      </v-icon>
-    </v-btn>
+    <div class="prev-month-btn" @click="prevBtnClicked">
+      <i class="fas fa-arrow-left" />
+    </div>
+    <div class="next-month-btn" @click="nextBtnClicked">
+      <i class="fas fa-arrow-right" />
+    </div>
 
     <div class="title">
       {{ title }}
@@ -32,6 +16,7 @@
 <script>
 import moment from 'moment'
 import { showPreviousMonth, showNextMonth } from '@/store/action-types'
+import {} from '@fortawesome/fontawesome-free/js/all'
 
 export default {
   name: 'MonthSetter',
@@ -63,6 +48,26 @@ export default {
 
 .tool-bar {
   margin: 10px;
+}
+
+.prev-month-btn,
+.next-month-btn {
+  margin: 5px;
+  padding: 5px;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, .25),
+  inset 0 2px 0 rgba(255, 255, 255, .6),
+  0 2px 0 rgba(0, 0, 0, .1),
+  inset 0 0 20px rgba(0, 0, 0, .1);
+  width: 25px;
+  height: 25px;
+}
+
+.prev-month-btn:hover,
+.next-month-btn:hover {
+  background-color: #f0eeee;
 }
 
 @media only screen and  (max-width: 768px) {

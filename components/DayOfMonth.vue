@@ -1,6 +1,6 @@
 <template>
-  <v-card class="mx-auto day-of-month" v-bind:disabled="isMonthNameVisible" :class="getTitleClass()">
-    <v-card-text class="day-of-month-body" :class="getTitleClass()">
+  <div class="day-of-month" :disabled="isMonthNameVisible" :class="getTitleClass()">
+    <div class="day-of-month-body" :class="getTitleClass()">
       <div v-if="ts === 0" class="weekday-name" :class="getHolidayClass()">
         {{ weekday }}
       </div>
@@ -12,8 +12,8 @@
           {{ currentMonthName }}
         </span>
       </div>
-    </v-card-text>
-  </v-card>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -88,9 +88,11 @@ export default {
   float: left;
   width: 14%;
   height: 10%;
-  margin: 0.1%;
+  margin: 0px;
   cursor: pointer;
   text-align: center;
+  border: #c9c8c8 1px solid;
+  padding: 10px;
 }
 
 .title {

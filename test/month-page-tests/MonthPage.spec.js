@@ -119,4 +119,18 @@ describe('Testing month view', () => {
     expect(dates.at(4).classes('holiday')).toBe(false) // Thu
     expect(dates.at(5).classes('holiday')).toBe(false) // Fri
   })
+
+  test('has built correct dates in 2021 January', () => {
+    wrapper = mount(Month, {
+      store: new Vuex.Store({
+        state: {
+          pageDateTs: moment(new Date(2021, 0, 1)).valueOf()
+        }
+      }),
+      localVue
+    })
+    const dates = wrapper.findAll('.date')
+    expect(dates.at(0).text()).toBe('28')
+    expect(dates.at(34).text()).toBe('31')
+  })
 })

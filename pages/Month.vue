@@ -6,13 +6,11 @@
       :key="name"
       :weekday="name"
     />
-    <client-only>
-      <DayOfMonth
-        v-for="unixDate in daysFromStart"
-        :key="unixDate"
-        :ts="unixDate"
-      />
-    </client-only>
+    <DayOfMonth
+      v-for="unixDate in daysFromStart"
+      :key="unixDate"
+      :ts="unixDate"
+    />
   </div>
 </template>
 
@@ -24,7 +22,10 @@ import moment from 'moment'
 export default {
   name: 'Month',
   layout: 'month',
-  components: { DayOfMonth, MonthSetter },
+  components: {
+    DayOfMonth,
+    MonthSetter
+  },
   computed: {
     weekdaysShortnames () {
       return moment.weekdaysShort()
