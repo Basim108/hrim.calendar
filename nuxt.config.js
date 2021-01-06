@@ -30,14 +30,16 @@ export default {
     extendRoutes (routes, resolve) {
       routes.push({
         name: 'month-view',
-        path: '/month/:year/:month/:day',
+        path: '/month/:year/:month/:date',
         component: resolve(__dirname, 'pages/index.vue'),
         props: true
       })
     }
   },
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: [
+    '@fortawesome/fontawesome-free/css/solid.css'
+  ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],

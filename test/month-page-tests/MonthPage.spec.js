@@ -1,7 +1,7 @@
 import { mount, createLocalVue } from '@vue/test-utils'
-import Month from '~/pages'
 import Vuex from 'vuex'
 import moment from 'moment'
+import Month from '~/pages'
 
 const localVue = createLocalVue()
 

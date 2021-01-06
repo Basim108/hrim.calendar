@@ -17,7 +17,7 @@ describe('testing setting page properties middleware', () => {
         params: {
           year: payload.year,
           month: payload.month,
-          day: payload.date
+          date: payload.date
         }
       }
     }
