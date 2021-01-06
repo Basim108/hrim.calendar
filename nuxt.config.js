@@ -4,7 +4,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'hrim.calendar',
+    title: 'Hrim Calendar',
     meta: [
       { charset: 'utf-8' },
       {
@@ -31,7 +31,7 @@ export default {
       routes.push({
         name: 'month-view',
         path: '/month/:year/:month/:day',
-        component: resolve(__dirname, 'pages/Month.vue'),
+        component: resolve(__dirname, 'pages/index.vue'),
         props: true
       })
     }

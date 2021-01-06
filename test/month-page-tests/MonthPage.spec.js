@@ -1,5 +1,5 @@
 import { mount, createLocalVue } from '@vue/test-utils'
-import Month from '@/pages/Month.vue'
+import Month from '~/pages'
 import Vuex from 'vuex'
 import moment from 'moment'
 
@@ -130,7 +130,7 @@ describe('Testing month view', () => {
       localVue
     })
     const dates = wrapper.findAll('.date')
-    expect(dates.at(0).text()).toBe('28')
-    expect(dates.at(34).text()).toBe('31')
+    expect(dates.at(0).text()).toBe('27')
+    expect(dates.at(dates.length - 1).text()).toBe('31')
   })
 })

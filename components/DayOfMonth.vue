@@ -1,5 +1,5 @@
 <template>
-  <div class="day-of-month" :disabled="isMonthNameVisible" :class="getTitleClass()">
+  <div class="day-of-month" :disabled="isMonthNameVisible && ts > 0" :class="getTitleClass()">
     <div class="day-of-month-body" :class="getTitleClass()">
       <div v-if="ts === 0" class="weekday-name" :class="getHolidayClass()">
         {{ weekday }}
@@ -66,6 +66,11 @@ export default {
 <style scoped>
 .holiday {
   color: red;
+}
+
+.day-of-month[disabled] {
+  font-style: italic;
+  opacity: 0.5;
 }
 
 .day-of-month:hover {

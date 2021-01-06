@@ -26,7 +26,6 @@ describe('testing month page actions', () => {
   })
 
   test('showPreviousMonth action should route to a correct path', () => {
-
     actions[showPreviousMonth].call(context, store)
     expect(context.$router.push).toHaveBeenCalled()
     expect(context.$router.push).toBeCalledWith(expect.objectContaining({

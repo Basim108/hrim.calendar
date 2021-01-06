@@ -39,6 +39,11 @@ export default {
         result[index++] = start.valueOf()
         start.add(1, 'd')
       }
+      const currentMonth = moment(this.$store.state.pageDateTs).month()
+      while (start.month() === currentMonth) {
+        result[index++] = start.valueOf()
+        start.add(1, 'd')
+      }
       return result
     }
   }
