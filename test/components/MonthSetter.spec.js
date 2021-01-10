@@ -1,5 +1,6 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Month from '@/components/MonthSetter'
+import uiModule from '@/store/ui'
 import Vuex from 'vuex'
 import moment from 'moment'
 
@@ -25,7 +26,8 @@ describe('Testing day of month component', () => {
         month: {
           namespaced: true,
           actions
-        }
+        },
+        ui: uiModule
       }
     })
     wrapper = mount(Month, {

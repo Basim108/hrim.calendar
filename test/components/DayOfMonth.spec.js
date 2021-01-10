@@ -1,5 +1,6 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Month from '@/components/DayOfMonth'
+import uiModule from '~/store/ui'
 import Vuex from 'vuex'
 import moment from 'moment'
 
@@ -14,6 +15,9 @@ describe('Testing day of month component', () => {
     store = new Vuex.Store({
       state: {
         pageDateTs: moment(new Date(2020, 11, 1)).valueOf()
+      },
+      modules: {
+        ui: uiModule
       }
     })
   })
