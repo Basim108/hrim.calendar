@@ -1,5 +1,5 @@
 <template>
-  <div class="tool-bar">
+  <div class="month-setter">
     <div class="prev-month-btn" @click="prevBtnClicked">
       <i class="fas fa-arrow-left" />
     </div>
@@ -15,7 +15,6 @@
 
 <script>
 import moment from 'moment'
-import { showPreviousMonth, showNextMonth } from '@/store/action-types'
 import {} from '@fortawesome/fontawesome-free/js/all'
 
 export default {
@@ -29,10 +28,10 @@ export default {
   },
   methods: {
     prevBtnClicked () {
-      this.$store.dispatch(showPreviousMonth)
+      this.$store.dispatch('month/showPreviousMonth')
     },
     nextBtnClicked () {
-      this.$store.dispatch(showNextMonth)
+      this.$store.dispatch('month/showNextMonth')
     }
   }
 }
@@ -44,10 +43,6 @@ export default {
   vertical-align: middle;
   margin-left: 5px;
   font-size: 22px;
-}
-
-.tool-bar {
-  margin: 10px;
 }
 
 .prev-month-btn,
@@ -74,10 +69,6 @@ export default {
   .title {
     margin-left: 5px;
     font-size: 18px;
-  }
-
-  .tool-bar {
-    margin-bottom: 5px;
   }
 }
 </style>

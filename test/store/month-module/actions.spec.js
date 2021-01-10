@@ -1,6 +1,5 @@
-import { actions } from '@/store'
-import { showPreviousMonth } from '@/store/action-types'
 import moment from 'moment'
+import { actions } from '~/store/month'
 
 describe('testing month page actions', () => {
   let context
@@ -13,7 +12,7 @@ describe('testing month page actions', () => {
 
   beforeEach(() => {
     store = {
-      state: {
+      rootState: {
         pageDateTs: moment(new Date(payload.year, payload.month, payload.date)).valueOf()
       }
     }
@@ -26,7 +25,7 @@ describe('testing month page actions', () => {
   })
 
   test('showPreviousMonth action should route to a correct path', () => {
-    actions[showPreviousMonth].call(context, store)
+    actions.showPreviousMonth.call(context, store)
     expect(context.$router.push).toHaveBeenCalled()
     expect(context.$router.push).toBeCalledWith(expect.objectContaining({
       path: expect.stringMatching('/month/2020/11/1')

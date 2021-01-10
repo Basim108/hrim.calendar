@@ -1,6 +1,9 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 import moment from 'moment'
+import monthModule from '@/store/month'
+import uiModule from '@/store/ui'
+import eventsModule from '@/store/events'
 import Month from '~/pages'
 
 const localVue = createLocalVue()
@@ -14,6 +17,11 @@ describe('Testing month view', () => {
     const store = new Vuex.Store({
       state: {
         pageDateTs: moment(new Date(2020, 11, 1)).valueOf()
+      },
+      modules: {
+        month: monthModule,
+        ui: uiModule,
+        events: eventsModule
       }
     })
     wrapper = mount(Month, {
@@ -125,6 +133,11 @@ describe('Testing month view', () => {
       store: new Vuex.Store({
         state: {
           pageDateTs: moment(new Date(2021, 0, 1)).valueOf()
+        },
+        modules: {
+          month: monthModule,
+          ui: uiModule,
+          events: eventsModule
         }
       }),
       localVue
