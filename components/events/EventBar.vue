@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     visibleEvents () {
-      return this.$store.state.events
+      return this.$store.state.events.events
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="create-event-btn" @click="createBtnClicked">
+  <div class="create-event-btn" :class="$store.state.ui.theme" @click="createBtnClicked">
     <i class="fas fa-plus" />
     <span><slot /></span>
   </div>
@@ -29,11 +29,25 @@ export default {
   cursor: pointer;
   border: 0;
   border-radius: 24px;
-  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 3px 20px rgba(0, 0, 0, .25),
+  inset 0 2px 0 rgba(255, 255, 255, .6),
+  0 2px 0 rgba(0, 0, 0, .1),
+  inset 0 0 20px rgba(0, 0, 0, .1);
 }
 
 .create-event-btn:hover {
   background-color: #f0eeee;
+}
+
+.dark {
+  box-shadow: 0 3px 20px rgba(255, 255, 255, .25),
+  inset 0 2px 0 rgba(0, 0, 0, .6),
+  0 2px 0 rgba(255, 255, 255, .1),
+  inset 0 0 20px rgba(255, 255, 255, .1);
+}
+
+.dark:hover {
+  background-color: #9d9a9a;
 }
 
 span {

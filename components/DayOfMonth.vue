@@ -1,5 +1,5 @@
 <template>
-  <div class="day-of-month" :disabled="isMonthNameVisible && ts > 0" :class="getTitleClass()">
+  <div class="day-of-month" :disabled="isMonthNameVisible && ts > 0" :class="[getTitleClass(), $store.state.ui.theme]">
     <div class="day-of-month-body" :class="getTitleClass()">
       <div v-if="ts === 0" class="weekday-name" :class="getHolidayClass()">
         {{ weekday }}
@@ -74,6 +74,10 @@ export default {
 
 .day-of-month:hover {
   background-color: #7bf4e0;
+}
+
+.dark:hover {
+  background-color: #366e66;
 }
 
 .date {

@@ -1,9 +1,9 @@
 <template>
   <div class="month-setter">
-    <div class="prev-month-btn" @click="prevBtnClicked">
+    <div class="prev-month-btn" :class="$store.state.ui.theme" @click="prevBtnClicked">
       <i class="fas fa-arrow-left" />
     </div>
-    <div class="next-month-btn" @click="nextBtnClicked">
+    <div class="next-month-btn" :class="$store.state.ui.theme" @click="nextBtnClicked">
       <i class="fas fa-arrow-right" />
     </div>
 
@@ -63,6 +63,17 @@ export default {
 .prev-month-btn:hover,
 .next-month-btn:hover {
   background-color: #f0eeee;
+}
+
+.dark {
+  box-shadow: 0 3px 20px rgba(255, 255, 255, .25),
+  inset 0 2px 0 rgba(0, 0, 0, .6),
+  0 2px 0 rgba(255, 255, 255, .1),
+  inset 0 0 20px rgba(255, 255, 255, .1);
+}
+
+.dark:hover {
+  background-color: #9d9a9a;
 }
 
 @media only screen and  (max-width: 768px) {
