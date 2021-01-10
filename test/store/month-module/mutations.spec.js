@@ -1,6 +1,5 @@
-import { mutations } from '@/store'
-import { SET_PAGE_DATE } from '@/store/mutation-types'
 import moment from 'moment'
+import { mutations } from '~/store'
 
 describe('testing month page mutations', () => {
   test('SET_PAGE_DATE mutation should set a page date', () => {
@@ -12,7 +11,7 @@ describe('testing month page mutations', () => {
       month: 11,
       date: 1
     }
-    mutations[SET_PAGE_DATE](state, payload)
+    mutations.SET_PAGE_DATE(state, payload)
     const testingMoment = moment(state.pageDateTs)
     expect(testingMoment.year()).toBe(payload.year)
     expect(testingMoment.month()).toBe(payload.month)

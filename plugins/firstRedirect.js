@@ -1,5 +1,4 @@
 import moment from 'moment'
-import { SET_PAGE_DATE } from '~/store/mutation-types'
 
 export default function ({
   app,
@@ -18,7 +17,7 @@ export default function ({
     const date = (route.params.date && parseInt(route.params.date)) || 1
     const path = '/month/' + year + '/' + month + '/' + date
     app.router.push(path)
-    store.commit(SET_PAGE_DATE, {
+    store.commit('SET_PAGE_DATE', {
       year,
       month: month - 1,
       date

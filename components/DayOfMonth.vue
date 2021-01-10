@@ -1,5 +1,5 @@
 <template>
-  <div class="day-of-month" :disabled="isMonthNameVisible && ts > 0" :class="getTitleClass()">
+  <div class="day-of-month" :disabled="isMonthNameVisible && ts > 0" :class="[getTitleClass(), $store.state.ui.theme]">
     <div class="day-of-month-body" :class="getTitleClass()">
       <div v-if="ts === 0" class="weekday-name" :class="getHolidayClass()">
         {{ weekday }}
@@ -70,15 +70,19 @@ export default {
 
 .day-of-month[disabled] {
   font-style: italic;
-  opacity: 0.5;
 }
 
 .day-of-month:hover {
   background-color: #7bf4e0;
 }
 
+.dark:hover {
+  background-color: #366e66;
+}
+
 .date {
   margin-top: 25%;
+  padding: 5px;
 }
 
 .weekday-name {
@@ -92,17 +96,17 @@ export default {
 .day-of-month {
   float: left;
   width: 14%;
-  height: 10%;
+  height: 20%;
   margin: 0px;
   cursor: pointer;
   text-align: center;
-  border: #c9c8c8 1px solid;
+  border: 0;
   padding: 10px;
 }
 
 .title {
-  height: 20px !important;
-  padding: 0px;
+  //min-height: 20px !important;
+  padding: 5px;
 }
 
 @media only screen and (max-width: 768px) {

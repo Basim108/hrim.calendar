@@ -1,9 +1,9 @@
 <template>
-  <div class="tool-bar">
-    <div class="prev-month-btn" @click="prevBtnClicked">
+  <div class="month-setter">
+    <div class="prev-month-btn" :class="$store.state.ui.theme" @click="prevBtnClicked">
       <i class="fas fa-arrow-left" />
     </div>
-    <div class="next-month-btn" @click="nextBtnClicked">
+    <div class="next-month-btn" :class="$store.state.ui.theme" @click="nextBtnClicked">
       <i class="fas fa-arrow-right" />
     </div>
 
@@ -15,7 +15,6 @@
 
 <script>
 import moment from 'moment'
-import { showPreviousMonth, showNextMonth } from '@/store/action-types'
 import {} from '@fortawesome/fontawesome-free/js/all'
 
 export default {
@@ -29,10 +28,10 @@ export default {
   },
   methods: {
     prevBtnClicked () {
-      this.$store.dispatch(showPreviousMonth)
+      this.$store.dispatch('month/showPreviousMonth')
     },
     nextBtnClicked () {
-      this.$store.dispatch(showNextMonth)
+      this.$store.dispatch('month/showNextMonth')
     }
   }
 }
@@ -44,10 +43,6 @@ export default {
   vertical-align: middle;
   margin-left: 5px;
   font-size: 22px;
-}
-
-.tool-bar {
-  margin: 10px;
 }
 
 .prev-month-btn,
@@ -70,14 +65,21 @@ export default {
   background-color: #f0eeee;
 }
 
+.dark {
+  box-shadow: 0 3px 20px rgba(255, 255, 255, .25),
+  inset 0 2px 0 rgba(0, 0, 0, .6),
+  0 2px 0 rgba(255, 255, 255, .1),
+  inset 0 0 20px rgba(255, 255, 255, .1);
+}
+
+.dark:hover {
+  background-color: #9d9a9a;
+}
+
 @media only screen and  (max-width: 768px) {
   .title {
     margin-left: 5px;
     font-size: 18px;
-  }
-
-  .tool-bar {
-    margin-bottom: 5px;
   }
 }
 </style>

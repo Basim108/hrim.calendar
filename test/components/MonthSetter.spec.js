@@ -1,6 +1,6 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Month from '@/components/MonthSetter'
-import { showPreviousMonth, showNextMonth } from '@/store/action-types'
+import uiModule from '@/store/ui'
 import Vuex from 'vuex'
 import moment from 'moment'
 
@@ -15,14 +15,20 @@ describe('Testing day of month component', () => {
 
   beforeEach(() => {
     actions = {
-      [showNextMonth]: jest.fn(),
-      [showPreviousMonth]: jest.fn()
+      showNextMonth: jest.fn(),
+      showPreviousMonth: jest.fn()
     }
     store = new Vuex.Store({
       state: {
         pageDateTs: moment(new Date(2020, 11, 1)).valueOf()
       },
-      actions
+      modules: {
+        month: {
+          namespaced: true,
+          actions
+        },
+        ui: uiModule
+      }
     })
     wrapper = mount(Month, {
       store,

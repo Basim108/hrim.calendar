@@ -1,5 +1,4 @@
 import pageProps from '@/middleware/page-props'
-import { SET_PAGE_DATE } from '@/store/mutation-types'
 
 describe('testing setting page properties middleware', () => {
   test('SET_PAGE_DATE mutation should be called', () => {
@@ -23,7 +22,7 @@ describe('testing setting page properties middleware', () => {
     }
     pageProps(context)
     expect(context.store.commit).toHaveBeenCalled()
-    expect(context.store.commit).toBeCalledWith(SET_PAGE_DATE, {
+    expect(context.store.commit).toBeCalledWith('SET_PAGE_DATE', {
       year: payload.year,
       month: payload.month - 1,
       date: payload.date
