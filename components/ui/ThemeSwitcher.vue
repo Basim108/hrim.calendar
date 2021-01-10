@@ -53,10 +53,28 @@ em {
   height: 34px;
   position: relative;
   width: 60px;
+  margin-top: -2px;
 }
 
 .theme-switch input {
   display: none;
+}
+
+@media only screen and  (max-width: 768px) {
+  .theme-switch {
+    height: 24px;
+    width: 45px;
+  }
+
+  .slider:before {
+    height: 20px !important;
+    width: 20px !important;
+    bottom: 2px !important;
+    left: 1px !important;
+  }
+  input:checked + .slider:before {
+    transform: translateX(21px) !important;
+  }
 }
 
 .slider {

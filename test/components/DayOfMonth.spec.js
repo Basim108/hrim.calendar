@@ -1,8 +1,8 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Month from '@/components/DayOfMonth'
-import uiModule from '~/store/ui'
 import Vuex from 'vuex'
 import moment from 'moment'
+import uiModule from '~/store/ui'
 
 const localVue = createLocalVue()
 

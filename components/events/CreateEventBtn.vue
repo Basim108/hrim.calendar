@@ -1,7 +1,7 @@
 <template>
   <div class="create-event-btn" :class="$store.state.ui.theme" @click="createBtnClicked">
     <i class="fas fa-plus" />
-    <span><slot /></span>
+    <span class="title"><slot /></span>
   </div>
 </template>
 
@@ -52,5 +52,15 @@ export default {
 
 span {
   margin: 4px;
+}
+
+@media only screen and  (max-width: 768px) {
+  .title {
+    display: none;
+  }
+  .create-event-btn{
+    margin: 0px;
+    padding: 5px;
+  }
 }
 </style>
