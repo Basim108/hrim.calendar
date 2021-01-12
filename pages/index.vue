@@ -5,7 +5,7 @@
       <ThemeSwitcher />
     </ToolBar>
     <div class="content">
-      <LeftBar>
+      <LeftBar :styles="leftBarStyles">
         <EventBar />
       </LeftBar>
       <div class="month-calendar">
@@ -43,6 +43,11 @@ export default {
     ToolBar,
     EventBar,
     ThemeSwitcher
+  },
+  data () {
+    return {
+      leftBarStyles: { maxWidth: '176px' }
+    }
   },
   computed: {
     weekdaysShortnames () {

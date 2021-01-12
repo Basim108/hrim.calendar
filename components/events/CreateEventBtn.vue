@@ -12,8 +12,7 @@ export default {
   methods: {
     createBtnClicked () {
       this.$store.dispatch('events/createEvent', {
-        id: 1,
-        color: 0xFF000,
+        color: 'red',
         name: 'Work Out'
       })
     }
@@ -25,7 +24,6 @@ export default {
 .create-event-btn {
   margin: 5px;
   padding: 10px;
-  display: inline-block;
   cursor: pointer;
   border: 0;
   border-radius: 24px;

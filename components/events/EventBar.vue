@@ -1,23 +1,24 @@
 <template>
   <div class="event-bar">
     <CreateEventBtn>Create Event</CreateEventBtn>
-    <div
-      v-for="dto in visibleEvents"
-      :key="dto.id"
-      class="event-item"
-    >
-      dto.name
+    <div class="panel">
+      <div class="panel-title" />
+      <ul v-for="dto in visibleEvents" :key="dto.id">
+        <li><EventItem :dto="dto" /></li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
 import CreateEventBtn from '@/components/events/CreateEventBtn'
+import EventItem from '@/components/events/EventItem'
 
 export default {
   name: 'EventBar',
   components: {
-    CreateEventBtn
+    CreateEventBtn,
+    EventItem
   },
   computed: {
     visibleEvents () {
@@ -31,6 +32,13 @@ export default {
 .event-bar {
   margin: 0 5px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 </style>
