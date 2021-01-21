@@ -1,5 +1,36 @@
 export const state = () => ({
-  events: []
+  events: [
+    {
+      id: 1,
+      color: '#0000FFFF',
+      name: 'Work Out'
+    },
+    {
+      id: 2,
+      color: 'blue',
+      name: 'Algorithms'
+    },
+    {
+      id: 3,
+      color: 'green',
+      name: 'System Design '
+    },
+    {
+      id: 4,
+      color: 'yellow',
+      name: 'Frontend'
+    },
+    {
+      id: 5,
+      color: 'red lighten-2',
+      name: 'Illness: Cold'
+    },
+    {
+      id: 6,
+      color: 'red lighten-1',
+      name: 'Illness: Flew'
+    }
+  ]
 })
 
 // sync mutate the state

@@ -1,5 +1,5 @@
 import { mount, createLocalVue } from '@vue/test-utils'
-import Month from '@/components/DayOfMonth'
+import Month from '@/components/month-view/DayOfMonth'
 import Vuex from 'vuex'
 import moment from 'moment'
 import uiModule from '~/store/ui'

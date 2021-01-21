@@ -37,9 +37,7 @@ export default {
     }
   },
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    '@fortawesome/fontawesome-free/css/solid.css'
-  ],
+  css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
@@ -54,7 +52,12 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    ['@nuxtjs/vuetify', {
+      theme: {
+        dark: false
+      }
+    }]
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
