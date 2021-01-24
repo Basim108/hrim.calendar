@@ -37,14 +37,16 @@ export default {
     }
   },
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    '@fortawesome/fontawesome-free/css/solid.css'
-  ],
+  css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     {
       src: '~/plugins/firstRedirect.js',
+      ssr: false
+    },
+    {
+      src: '~/plugins/vuetify.js',
       ssr: false
     }
   ],
@@ -54,7 +56,12 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    ['@nuxtjs/vuetify', {
+      theme: {
+        dark: false
+      }
+    }]
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -62,6 +69,7 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    transpile: ['vuetify'],
     extend (config, ctx) {
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
