@@ -21,6 +21,10 @@ import MonthCalendar from '@/components/month-view/MonthCalendar'
 import MonthSetter from '@/components/month-view/MonthSetter'
 import EventSelector from '@/components/events/EventSelector'
 import Settings from '@/components/settings/Settings'
+import { VApp } from 'vuetify/lib/components/VApp'
+import { VMain } from 'vuetify/lib/components/VMain'
+import { VDivider } from 'vuetify/lib/components/VDivider'
+import { VContainer, VRow, VSpacer } from 'vuetify/lib/components/VGrid'
 
 export default {
   name: 'Month',
@@ -29,7 +33,13 @@ export default {
     MonthCalendar,
     MonthSetter,
     EventSelector,
-    Settings
+    Settings,
+    VApp,
+    VContainer,
+    VMain,
+    VDivider,
+    VRow,
+    VSpacer
   }
 }
 </script>

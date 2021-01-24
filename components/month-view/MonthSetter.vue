@@ -1,7 +1,7 @@
 <template>
   <div class="month-setter">
     <v-btn
-      class="sm-2"
+      class="sm-2 prev-month-btn"
       fab
       x-small
       @click="prevBtnClicked"
@@ -11,7 +11,7 @@
       </v-icon>
     </v-btn>
     <v-btn
-      class="sm-2"
+      class="sm-2 next-month-btn"
       fab
       x-small
       @click="nextBtnClicked"
@@ -28,10 +28,16 @@
 </template>
 
 <script>
+import { VBtn } from 'vuetify/lib/components/VBtn'
+import { VIcon } from 'vuetify/lib/components/VIcon'
 import moment from 'moment'
 
 export default {
   name: 'MonthSetter',
+  components: {
+    VBtn,
+    VIcon
+  },
   computed: {
     title () {
       const pageDate = moment(this.$store.state.pageDateTs)

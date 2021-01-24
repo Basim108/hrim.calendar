@@ -2,16 +2,18 @@ import { mount, createLocalVue } from '@vue/test-utils'
 import Month from '@/components/month-view/DayOfMonth'
 import Vuex from 'vuex'
 import moment from 'moment'
+import Vuetify from 'vuetify'
 import uiModule from '~/store/ui'
 
 const localVue = createLocalVue()
-
 localVue.use(Vuex)
 
 describe('Testing day of month component', () => {
   let store
+  let vuetify
 
   beforeEach(() => {
+    vuetify = new Vuetify()
     store = new Vuex.Store({
       state: {
         pageDateTs: moment(new Date(2020, 11, 1)).valueOf()
@@ -25,7 +27,8 @@ describe('Testing day of month component', () => {
   test('is a Vue instance', () => {
     const wrapper = mount(Month, {
       store,
-      localVue
+      localVue,
+      vuetify
     })
     expect(wrapper.vm).toBeTruthy()
   })
@@ -34,6 +37,7 @@ describe('Testing day of month component', () => {
     const wrapper = mount(Month, {
       store,
       localVue,
+      vuetify,
       propsData: {
         weekday: 'Sun'
       }
@@ -46,6 +50,7 @@ describe('Testing day of month component', () => {
     const wrapper = mount(Month, {
       store,
       localVue,
+      vuetify,
       propsData: {
         weekday: 'Sun'
       }
@@ -58,6 +63,7 @@ describe('Testing day of month component', () => {
     const wrapper = mount(Month, {
       store,
       localVue,
+      vuetify,
       propsData: {
         weekday: 'Sat'
       }
@@ -70,6 +76,7 @@ describe('Testing day of month component', () => {
     const wrapper = mount(Month, {
       store,
       localVue,
+      vuetify,
       propsData: {
         weekday: 'Mon'
       }
@@ -82,6 +89,7 @@ describe('Testing day of month component', () => {
     const wrapper = mount(Month, {
       store,
       localVue,
+      vuetify,
       propsData: {
         weekday: 'Tue'
       }
@@ -94,6 +102,7 @@ describe('Testing day of month component', () => {
     const wrapper = mount(Month, {
       store,
       localVue,
+      vuetify,
       propsData: {
         weekday: 'Wed'
       }
@@ -106,6 +115,7 @@ describe('Testing day of month component', () => {
     const wrapper = mount(Month, {
       store,
       localVue,
+      vuetify,
       propsData: {
         weekday: 'Thu'
       }
@@ -118,6 +128,7 @@ describe('Testing day of month component', () => {
     const wrapper = mount(Month, {
       store,
       localVue,
+      vuetify,
       propsData: {
         weekday: 'Fri'
       }
@@ -130,6 +141,7 @@ describe('Testing day of month component', () => {
     const wrapper = mount(Month, {
       store,
       localVue,
+      vuetify,
       propsData: {
         ts: moment(new Date(2020, 10, 1)).valueOf()
       }
@@ -142,6 +154,7 @@ describe('Testing day of month component', () => {
     const wrapper = mount(Month, {
       store,
       localVue,
+      vuetify,
       propsData: {
         ts: moment(new Date(2020, 11, 5)).valueOf()
       }

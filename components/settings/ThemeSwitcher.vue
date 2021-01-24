@@ -10,8 +10,13 @@
 </template>
 
 <script>
+import { VSwitch } from 'vuetify/lib/components/VSwitch'
+
 export default {
-  name: 'ThemeSwitcher'
+  name: 'ThemeSwitcher',
+  components: {
+    VSwitch
+  }
 }
 </script>
 

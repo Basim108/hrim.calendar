@@ -3,9 +3,9 @@ import Month from '@/components/month-view/MonthSetter'
 import uiModule from '@/store/ui'
 import Vuex from 'vuex'
 import moment from 'moment'
+import Vuetify from 'vuetify'
 
 const localVue = createLocalVue()
-
 localVue.use(Vuex)
 
 describe('Testing day of month component', () => {
@@ -32,7 +32,8 @@ describe('Testing day of month component', () => {
     })
     wrapper = mount(Month, {
       store,
-      localVue
+      localVue,
+      vuetify: new Vuetify()
     })
   })
 

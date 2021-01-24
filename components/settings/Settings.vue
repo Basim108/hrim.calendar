@@ -24,12 +24,21 @@
 
 <script>
 import ThemeSwitcher from '@/components/settings/ThemeSwitcher'
+import { VList, VListItem } from 'vuetify/lib/components/VList'
+import { VMenu } from 'vuetify/lib/components/VMenu'
+import { VBtn } from 'vuetify/lib/components/VBtn'
+import { VIcon } from 'vuetify/lib/components/VIcon'
 import {} from '@fortawesome/fontawesome-free/js/all'
 
 export default {
   name: 'Settings',
   components: {
-    ThemeSwitcher
+    ThemeSwitcher,
+    VMenu,
+    VList,
+    VListItem,
+    VBtn,
+    VIcon
   }
 }
 </script>

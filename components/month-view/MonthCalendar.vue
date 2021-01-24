@@ -15,10 +15,15 @@
 
 <script>
 import moment from 'moment'
+import DayOfMonth from '@/components/month-view/DayOfMonth'
+import { VContainer } from 'vuetify/lib/components/VGrid'
 
 export default {
   name: 'MonthCalendar',
-
+  components: {
+    DayOfMonth,
+    VContainer
+  },
   computed: {
     weekdaysShortnames () {
       return moment.weekdaysShort()

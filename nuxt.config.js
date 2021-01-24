@@ -44,6 +44,10 @@ export default {
     {
       src: '~/plugins/firstRedirect.js',
       ssr: false
+    },
+    {
+      src: '~/plugins/vuetify.js',
+      ssr: false
     }
   ],
 
@@ -65,6 +69,7 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    transpile: ['vuetify'],
     extend (config, ctx) {
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({

@@ -45,8 +45,26 @@
 </template>
 
 <script>
+import CreateEventDialog from '@/components/events/CreateEventDialog'
+import { VSelect } from 'vuetify/lib/components/VSelect'
+import { VChip } from 'vuetify/lib/components/VChip'
+import { VDivider } from 'vuetify/lib/components/VDivider'
+import { VIcon } from 'vuetify/lib/components/VIcon'
+import { VListItem, VListItemContent, VListItemTitle, VListItemAction } from 'vuetify/lib/components/VList'
+
 export default {
   name: 'EventSelector',
+  components: {
+    CreateEventDialog,
+    VSelect,
+    VChip,
+    VDivider,
+    VListItem,
+    VListItemContent,
+    VListItemTitle,
+    VListItemAction,
+    VIcon
+  },
   data () {
     return {
       selectedEvents: []

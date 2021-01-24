@@ -4,6 +4,7 @@ import moment from 'moment'
 import monthModule from '@/store/month'
 import uiModule from '@/store/ui'
 import eventsModule from '@/store/events'
+import Vuetify from 'vuetify'
 import Month from '~/pages'
 
 const localVue = createLocalVue()
@@ -26,7 +27,8 @@ describe('Testing month view', () => {
     })
     wrapper = mount(Month, {
       store,
-      localVue
+      localVue,
+      vuetify: new Vuetify()
     })
   })
 
@@ -140,6 +142,7 @@ describe('Testing month view', () => {
           events: eventsModule
         }
       }),
+      vuetify: new Vuetify(),
       localVue
     })
     const dates = wrapper.findAll('.date')

@@ -90,8 +90,31 @@
 </template>
 
 <script>
+import { VDialog } from 'vuetify/lib/components/VDialog'
+import { VCard, VCardTitle, VCardActions, VCardText } from 'vuetify/lib/components/VCard'
+import { VForm } from 'vuetify/lib/components/VForm'
+import { VBtn } from 'vuetify/lib/components/VBtn'
+import { VSpacer, VRow, VCol, VContainer } from 'vuetify/lib/components/VGrid'
+import { VColorPicker } from 'vuetify/lib/components/VColorPicker'
+import { VTextField } from 'vuetify/lib/components/VTextField'
+
 export default {
   name: 'CreateEventDialog',
+  components: {
+    VDialog,
+    VCard,
+    VForm,
+    VCardActions,
+    VBtn,
+    VSpacer,
+    VCardText,
+    VContainer,
+    VRow,
+    VCol,
+    VColorPicker,
+    VTextField,
+    VCardTitle
+  },
   data: () => ({
     valid: true,
     dialog: false,
